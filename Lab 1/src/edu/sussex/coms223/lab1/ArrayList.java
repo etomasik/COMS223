@@ -11,7 +11,7 @@ public class ArrayList<E> implements List<E>
 	public boolean add(E e) {
 		if (e== null)
 			throw new IllegalArgumentException("null values are not allowed");
-		data =Arrays.copyOf(data.length + 1);
+		data =Arrays.copyOf(data, data.length + 1);
 		data[data.length - 1] = e;
 		return true;
 	}
