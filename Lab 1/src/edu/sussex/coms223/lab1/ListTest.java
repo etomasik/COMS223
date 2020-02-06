@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 class ListTest {
 
 	public static Stream<List<Integer>> lists() {
-		return Stream.of(new ArrayList<>());
+		return Stream.of(new ArrayList<>(), new LinkedList<>());
 	}
 
 	@ParameterizedTest
