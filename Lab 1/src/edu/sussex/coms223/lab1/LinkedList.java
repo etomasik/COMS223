@@ -156,29 +156,36 @@ public class LinkedList<E> implements List<E> {
 		return node.data;
 	}
 
+	/**
+	 * Return the number of elements in the List.
+	 *
+	 * @return the list size.
+	 */
 	@Override
-	public int size() {	
+	public int size() {
+		// Initialize our element count to 0.
 		int count = 0;
-		
-		if (tail == null)
-			return count;
-		
-		Node node = tail.next;
-		
-		do 
-		{
-			count++;
-			node = node.next;
+
+		// If list is empty, nothing to do.
+		if (tail != null) {
+			// Starting at the head of the list, count nodes until we're back at the head.
+			Node node = tail.next;
+			do {
+				node = node.next;
+				count++;
+			} while (node != tail.next);
 		}
-		
-		while(node != tail.next);
-			
+
+		// Return count of list elements.
 		return count;
 	}
 
+	/**
+	 * Clear the List by resetting tail to null.
+	 */
 	@Override
 	public void clear() {
 		tail = null;
-		
 	}
+
 }
