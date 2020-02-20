@@ -13,7 +13,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 class MapTest {
 
 	public static Stream<Map<String, Integer>> maps() {
-		return Stream.of(new HashMap<String, Integer>());
+		return Stream.of(new HashMap<String, Integer>(), new BinaryTreeMap<String, Integer>());
 	}
 
 	@ParameterizedTest
@@ -61,7 +61,7 @@ class MapTest {
 	@ParameterizedTest
 	@MethodSource("maps")
 	void testPerformance(Map<String, Integer> m) {
-		final int ITERATIONS = 10000;
+		final int ITERATIONS = 5000;
 		Random rng = new Random();
 		for (int i = 0; i < ITERATIONS; i++) {
 			m.clear();

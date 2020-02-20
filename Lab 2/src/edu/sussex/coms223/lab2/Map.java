@@ -20,4 +20,6 @@ public interface Map<K, V> {
 	int size();
 
 	void clear();
+	
+	void print();
 }
