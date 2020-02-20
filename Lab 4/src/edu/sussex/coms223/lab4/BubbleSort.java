@@ -39,6 +39,7 @@ public class BubbleSort {
 			sorted = true;
 
 			for (int j = 1; j < array.length - i; j++) {
+				comparisons++;
 				if (array[j - 1].compareTo(array[j]) > 0) {
 					sorted = false;
 					T tmp = array[j - 1];
