@@ -255,8 +255,11 @@ public class BinaryTreeMap<K extends Comparable<K>, V> implements Map<K, V> {
 	 * @return the number of nodes rooted at node including the node itself.
 	 */
 	private int size(Node node) {
-		// TODO: implement
+		if (node == null)
 		return 0;
+	else
+		return 1 + size(node.left) + size(node.right);
+			
 	}
 
 	@Override
